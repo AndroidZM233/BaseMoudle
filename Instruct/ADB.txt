@@ -1,0 +1,21 @@
+adb remount
+adb push mRead.txt /system
+adb reboot
+
+adb shell
+cd system/
+ls  查看目录下文件
+su（shell命令模式中获取超级用户权限）
+chmod 777  权限为可读，可写可操作 
+
+//WIFi调试
+adb tcpip 5555
+adb connect 192.168.1.62
+
+adb shell "cat /sys/devices/virtual/misc/mtgpio/pin"
+netstat -ano
+netstat -ano|findstr “80″ //查看端口占用情况
+
+抓log：输入 adb logcat + 回车
+停止抓log：使用ctrl + c
+将log导出：adb logcat > d：1.txt（将log导出到d：/1.txt文件中）
